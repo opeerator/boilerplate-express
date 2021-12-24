@@ -1,6 +1,12 @@
 var express = require('express');
 var app = express();
 
+
+app.use(function(req, res, next){
+    console.log(req.method + " " + req.path + " - " + req.ip);
+    next();
+});
+
 app.get("/", function(req, res){
     absolutePath = __dirname + "/views/index.html";
     res.sendFile(absolutePath);
@@ -14,8 +20,6 @@ app.use('/json', function(req, res){
     else
         res.json({"message": "Hello json"});
 });
-
-
 
 
 
