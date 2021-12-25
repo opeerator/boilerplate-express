@@ -21,7 +21,12 @@ app.use('/json', function(req, res){
         res.json({"message": "Hello json"});
 });
 
-
+app.get('/now', function(req, res, next){
+    req.time = newDate.toString();
+    next();
+}, function(res, req){
+    res.json({"time": req.time});
+});
 
 
 
