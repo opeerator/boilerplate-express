@@ -22,7 +22,7 @@ app.use('/json', function(req, res){
 });
 
 app.get('/now', function(req, res, next){
-    req.time = new Date.toString();
+    req.time = new Date().toString();
     next();
 }, function(res, req){
     res.json({"time": req.time});
