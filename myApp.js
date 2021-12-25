@@ -39,7 +39,7 @@ app.route('/name').get(function(req, res){
     second = req.query.last
     res.json({name: first + " " + second});
 }).post(function(req, res){
-    res.json({name: req.body.userId + " " + req.body.bookId});
+    res.json({name: req.body.first + " " + req.body.last});
 });
 
 
