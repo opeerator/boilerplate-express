@@ -32,7 +32,11 @@ app.get('/:word/echo', function(req, res){
     res.json({echo: req.params.word});
 });
 
-
+app.path('/name').get(function(req, res){
+    first = req.query.first
+    second = req.query.last
+    res.json({name: first + " " + second});
+}).post()
 
 
 
